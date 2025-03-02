@@ -1,4 +1,4 @@
-# Advanced Image Processing with AI: From Restoration to Generation
+# Advanced Image Restoration with AI
 
 ## Project Overview
 This project explores state-of-the-art AI approaches for image processing, with a focus on image quality restoration and enhancement. While our initial concept involved diffusion models, thorough research led me to implement three powerful models (Real-ESRGAN, SwinIR, and BSRGAN) for this project due to their specific advantages for image restoration tasks. Future work may incorporate diffusion models for additional capabilities.
