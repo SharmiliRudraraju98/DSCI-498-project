@@ -18,8 +18,17 @@ def download_file(url, dest_path):
     else:
         print(f"✅ {dest_path} already exists, skipping download.")
 
+def install_real_esrgan_editable():
+    print("📦 Installing Real-ESRGAN as editable package...")
+    try:
+        subprocess.check_call(["pip", "install", "-e", ".", "--user"], cwd="Real-ESRGAN")
+        print("✅ Real-ESRGAN installed in editable mode.")
+    except subprocess.CalledProcessError as e:
+        print("❌ Failed to install Real-ESRGAN.")
+        print(e)
+
 def main():
-    print("🚀 Setting up model repositories and pretrained weights...")
+    print("🚀 Setting up model repositories and pretrained weights...\n")
 
     # Clone repos
     clone_repo("https://github.com/cszn/BSRGAN.git", "BSRGAN")
@@ -40,7 +49,10 @@ def main():
         "SwinIR/model_zoo/SwinIR-L_x4_GAN.pth"
     )
 
-    print("🎉 All models and weights are ready!")
+    # Install Real-ESRGAN locally
+    install_real_esrgan_editable()
+
+    print("\n🎉 All repositories, weights, and installations are ready to go!")
 
 if __name__ == "__main__":
     main()

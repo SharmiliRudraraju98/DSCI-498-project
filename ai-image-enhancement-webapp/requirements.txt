@@ -1,0 +1,11 @@
+streamlit
+torch
+torchvision
+opencv-python-headless
+pillow
+facexlib
+gfpgan
+basicsr
+timm
+scikit-image
+numpy
