@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enhancement Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h1 class="text-center fw-bold mb-3">Enhancement Results</h1>
+    <p class="text-center text-muted mb-5">Comparison of original and enhanced images</p>
+
+    <div class="card shadow p-4">
+      <h5 class="fw-bold mb-4">Model Used: <span class="text-primary">{{ model }}</span></h5>
+
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h6>Original Image</h6>
+          <img src="/{{ input_image }}" alt="Original Image" class="img-fluid rounded border shadow-sm" style="max-height: 300px;">
+        </div>
+        <div class="col-md-6 text-center">
+          <h6>Enhanced Image</h6>
+          <img src="/{{ output_image }}" alt="Enhanced Image" class="img-fluid rounded border shadow-sm" style="max-height: 300px;">
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/download/{{ output_filename }}" class="btn btn-primary">Download Enhanced Image</a>
+        <a href="/" class="btn btn-secondary ms-2">Try Another Image</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
