@@ -37,8 +37,8 @@ def run_model(input_path, output_path, model_name):
         cwd = 'Real-ESRGAN'
         try:
             result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
-            print("⚠️ Stdout:\n", result.stdout)
-            print("❌ Stderr:\n", result.stderr)
+            print("⚠️ Real-ESRGAN Stdout:\n", result.stdout)
+            print("❌ Real-ESRGAN Stderr:\n", result.stderr)
             result.check_returncode()
         except subprocess.CalledProcessError as e:
             print("Real-ESRGAN execution failed!")
@@ -46,17 +46,26 @@ def run_model(input_path, output_path, model_name):
             print("Stderr:\n", e.stderr)
             return False
 
-        # Explicitly look for output file
+        # Check what files exist in output folder
+        output_folder = os.path.dirname(output_path)
+        print(f"🔍 Files in {output_folder}:")
+        for file in os.listdir(output_folder):
+            print(" -", file)
+
+        # Guess output file
         input_filename = os.path.basename(input_path)
         input_name, ext = os.path.splitext(input_filename)
-        output_guess = os.path.join(os.path.dirname(output_path), f'{input_name}_out{ext}')
+        output_guess = os.path.join(output_folder, f'{input_name}_out{ext}')
+        print(f"🔎 Looking for output: {output_guess}")
+
         if os.path.exists(output_guess):
             shutil.copy(output_guess, output_path)
-            print(f"Real-ESRGAN output copied to: {output_path}")
+            print(f"✅ Real-ESRGAN output copied to: {output_path}")
             return True
         else:
-            print(f"Real-ESRGAN output not found at: {output_guess}")
+            print(f"❌ Real-ESRGAN output not found at: {output_guess}")
             return False
+
 
     elif model_name == 'bsrgan':
         default_input_folder = os.path.join('BSRGAN', 'testsets', 'RealSRSet')
