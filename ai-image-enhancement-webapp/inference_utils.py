@@ -36,6 +36,7 @@ def run_model(input_path, output_path, model_name):
         ]
         cwd = 'Real-ESRGAN'
         try:
+            result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
             print("⚠️ Stdout:\n", result.stdout)
             print("❌ Stderr:\n", result.stderr)
             result.check_returncode()
