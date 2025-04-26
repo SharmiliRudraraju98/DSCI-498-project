@@ -36,7 +36,9 @@ def run_model(input_path, output_path, model_name):
         ]
         cwd = 'Real-ESRGAN'
         try:
-            subprocess.run(cmd, cwd=cwd, check=True)
+            print("⚠️ Stdout:\n", result.stdout)
+            print("❌ Stderr:\n", result.stderr)
+            result.check_returncode()
         except subprocess.CalledProcessError as e:
             print("Real-ESRGAN execution failed!")
             print("Stdout:\n", e.stdout)
@@ -77,7 +79,10 @@ def run_model(input_path, output_path, model_name):
         # Run the BSRGAN model
         cmd = ['python', 'main_test_bsrgan.py']
         cwd = 'BSRGAN'
-        subprocess.run(cmd, cwd=cwd, check=True)
+        result = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+        print("⚠️ Stdout:\n", result.stdout)
+        print("❌ Stderr:\n", result.stderr)
+        result.check_returncode()
 
         # Find and copy the result
         output_candidates = glob.glob(os.path.join(default_output_folder, '*'))
