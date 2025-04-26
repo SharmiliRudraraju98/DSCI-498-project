@@ -9,3 +9,4 @@ basicsr
 timm
 scikit-image
 numpy
+requests
