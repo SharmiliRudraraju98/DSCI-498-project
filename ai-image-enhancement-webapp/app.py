@@ -33,6 +33,7 @@ def enhance():
 
     image.save(input_path)
 
+    
     success = run_model(input_path, output_path, model)
 
     if not success or not os.path.exists(output_path):
