@@ -4,7 +4,7 @@
 
 This project focuses on enhancing the quality of degraded images using three state-of-the-art deep learning models: Real-ESRGAN, SwinIR-Large, and BSRGAN.
 
-We implemented a full evaluation pipeline in a Jupyter Notebook, followed by building a  add-on Flask web application for user interaction.
+We implemented a full evaluation pipeline in a Jupyter Notebook, followed by building an add-on Flask web application works locally for user interaction.
 
 The project compares the models based on:
 - Quantitative metrics (PSNR and SSIM)
