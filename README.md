@@ -20,8 +20,7 @@ The project compares the models based on:
    ```
 
 2. **Open the provided Jupyter Notebook:**
-   - Navigate to the `notebooks/` directory and open `image_restoration_colab.ipynb`.
-
+   - Navigate to the `Restoring_Image_Quality_With_AI_using_Real_ESRGAN,_SwinIR_and_BSRGAN_SharmiliR (3).ipynb`
 3. **Install the required Python packages:**
    - torch
    - opencv-python
