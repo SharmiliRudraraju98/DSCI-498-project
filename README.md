@@ -39,6 +39,10 @@ The project compares the models based on:
    - Upload your images
    - Run inference for all three models (Real-ESRGAN, BSRGAN, and SwinIR-Large)
    - View enhanced results and evaluation metrics
+   - You can also use few features like Zooming to look out for the detailing of each model.
+   - Can see Quantitative metrics (PSNR and SSIM)
+   - Can do Color histogram and brightness distribution analysis
+   - And see Edge detection and preservation measurements
 
 5. **Results:**
    - Enhanced images are saved under the `results/` directory
